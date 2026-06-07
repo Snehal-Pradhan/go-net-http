@@ -2,15 +2,15 @@
 <div>
   <img alt="Project Status" src="https://img.shields.io/badge/Project%20Status-Completed%20/%20Stable-success">
 </div>
+<div align="center">
+  <img alt="Go logo" src="public/logo.png" width="20%">
+</div>
 
 <h3 align="center">
   Go net/http Server
   <br/>
   with Middleware Chaining and TLS
 </h3>
-<div align="center">
-  <img alt="Go logo" src="public/logo.png" width="20%">
-</div>
 
 <p align="center">
     <a href="#features">Features</a> ·
