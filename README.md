@@ -1,4 +1,8 @@
 
+<div>
+  <img alt="Project Status" src="https://img.shields.io/badge/Project%20Status-Completed%20/%20Stable-success">
+</div>
+
 <h3 align="center">
   Go net/http Server
   <br/>
@@ -18,9 +22,11 @@
 
 &nbsp;
 
+> **Project Status:** 🟢 **Complete & Stable.** All core features, architectural benchmarks, and test suites are fully implemented and verified. This repository is in maintenance mode.
+
 A production-style HTTPS server built entirely on Go's standard `net/http` package — middleware chaining, Bearer token auth, subrouting, cookies, path params, host-based routing, and a CRUD todo API — without any third-party frameworks.
 
-**Tech stack:** Go 1.25 · `net/http` · `encoding/json` · `sync`
+**Tech stack:** Go · `net/http` · `encoding/json` · `sync`
 
 ## Features
 
@@ -84,6 +90,15 @@ go test -v .
 | :--------------- | :---- | :------------------------------------------------------------------------ |
 | `main_test.go`   | 13    | Middleware order, status capture, auth extraction, cookies, user router   |
 | `todo_test.go`   | 15    | CRUD operations, auth enforcement, not found, invalid input, validation   |
+
+## Future Scope
+
+- Persistent storage (PostgreSQL or SQLite)
+- Rate limiting middleware
+- Request ID tracing middleware
+- OpenAPI / Swagger documentation
+- Docker containerization
+- CI pipeline with automated tests
 
 <br>
 
