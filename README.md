@@ -22,21 +22,18 @@
 
 &nbsp;
 
-> **Project Status:** 🟢 **Complete & Stable.** All core features, architectural benchmarks, and test suites are fully implemented and verified. This repository is in maintenance mode.
+> **Project Status:** 🟢 **Complete & Stable.** All core features and test suites are fully implemented and verified. This repository is in maintenance mode.
 
 A production-style HTTPS server built entirely on Go's standard `net/http` package — middleware chaining, Bearer token auth, subrouting, cookies, path params, host-based routing, and a CRUD todo API — without any third-party frameworks.
 
 **Tech stack:** Go · `net/http` · `encoding/json` · `sync`
 
 ## Features
-
-| Routing                                                 | Middleware                                              | Auth & Security                                          | Storage & TLS                                      |
-| :------------------------------------------------------ | :------------------------------------------------------ | :------------------------------------------------------- | :------------------------------------------------- |
-| Path parameters via `r.PathValue("id")`                 | Logging — method, path, duration                        | Bearer token extraction from `Authorization` header      | In-memory thread-safe store (`sync.RWMutex`)       |
-| Method-based routing (`GET /path`, `POST /path`)        | Custom header injection (`X-Custom: hello`)             | Token propagation via `context.WithValue`                | JSON serialization via `encoding/json`             |
-| Host-based routing (`api.example.com/hello`)            | Composible middleware stack (`createStack`)             | Protection on POST/PUT/DELETE todo endpoints             | TLS 1.3 via `ListenAndServeTLS` on `:443`          |
-| Subrouting with `http.StripPrefix` (`/users/`, `/todos/`)| Response status code capture via wrapped `ResponseWriter`| 401 on missing token                                     | Self-signed certs via OpenSSL                      |
-
+1. **TLS 1.3 + Self-signed certs** via `ListenAndServeTLS`
+2. **Bearer token auth** with 401 protection on POST/PUT/DELETE
+3. **Thread-safe store** via `sync.RWMutex` + JSON serialization
+4. **Composable middleware chaining** — `createStack` chains logging, headers & status capture
+5. **Flexible routing** — path params, host-based, subrouting
 ## Routes
 
 | Method   | Path                    | Auth | Response                                |
